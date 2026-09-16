@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const serviceLinks = [
@@ -12,6 +12,22 @@ const serviceLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${headerRef.current.offsetHeight}px`
+        );
+      }
+    };
+
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    return () => window.removeEventListener('resize', updateHeaderHeight);
+  }, []);
 
   const handleServiceClick = (serviceId) => {
     navigate(`/services?tab=${serviceId}`);
@@ -21,7 +37,7 @@ export default function Header() {
   return (
     <>
       {/* Main Header - Pristine White with soft border and subtle shadow */}
-      <header className="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-sky-100 shadow-sm transition-all">
+      <header ref={headerRef} className="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-sky-100 shadow-sm transition-all">
         <div className="site-container py-3 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3" id="header-logo">
