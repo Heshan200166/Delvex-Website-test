@@ -67,12 +67,12 @@ export default function Contact() {
             </a>
 
             {/* Call 2 */}
-            <a href="tel:+94741625403" className="contact-card group p-6 sm:p-8" id="contact-call-2">
+            <a href="tel:+94711566062" className="contact-card group p-6 sm:p-8" id="contact-call-2">
               <div className="w-14 h-14 rounded-full bg-sky-50 text-sky-600 border border-sky-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform">
                 <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
               </div>
               <h3 className="font-heading font-bold text-[#0c2340] text-sm md:text-base mb-1.5">Call Hotline 2</h3>
-              <p className="text-sky-600 font-semibold text-sm">074 162 5403</p>
+              <p className="text-sky-600 font-semibold text-sm">071 15 66 062</p>
             </a>
           </div>
 
